@@ -56,10 +56,122 @@ public class StringMethods {
 	// You cannot assume there are no extra spaces around the name, but you can
 	// assume there is only one space between the first and last name
 	public static String lineLeader(String s1, String s2, String s3) {
+		char[] a = s1.toCharArray();
+		char[] b = s2.toCharArray();
+		char[] c = s3.toCharArray();
+			int x = 0;
+		String s11 = "";
 		
-		return null;
+		for(int i = 0; i < a.length; i++) {
+			
+				if(x==2) {
+					if(a[i]!=' ') {
+						s11 = s11+a[i];
+				}
+				}
+				
+				if(x == 1) {
+					if(a[i]==' ') {
+						x++;
+						
+					}
+					s11 = s11+a[i];
+				}
+			
+			if(x == 0) {
+				if(a[i]!=' ') {
+					x++;
+					s11 = s11+a[i];
+				}
+			
+			}
+		
+		}
+		x = 0;
+		String s22 = "";
+		for(int i = 0; i < b.length; i++) {
+			
+			if(x==2) {
+				if(b[i]!=' ') {
+					s22 = s22+b[i];
+			}
+			}
+			
+			if(x == 1) {
+				if(b[i]==' ') {
+					x++;
+					
+				}
+				s22 = s22+b[i];
+			}
+		
+		if(x == 0) {
+			if(b[i]!=' ') {
+				x++;
+				s22 = s22+b[i];
+			}
+		
+		}
+	
+	}
+		x = 0;
+		String s33 = "";
+		for(int i = 0; i < c.length; i++) {
+			
+			if(x==2) {
+				if(c[i]!=' ') {
+					s33 = s33+c[i];
+			}
+			}
+			
+			if(x == 1) {
+				if(c[i]==' ') {
+					x++;
+					
+				}
+				s33 = s33+c[i];
+			}
+		
+		if(x == 0) {
+			if(c[i]!=' ') {
+				x++;
+				s33 = s33+c[i];
+			}
+		
+		}
+	
+	}
+		
+		
+		
+		System.out.println(s11);
+		System.out.println(s22);
+		System.out.println(s33);
+		System.out.println(s11.substring(s11.length()-1));
+		System.out.println(s22.substring(s22.length()-1));
+		System.out.println(s33.substring(s33.length()-1));
+		
+		
+	
+		if(s11.substring(s11.length()-1).compareTo(s22.substring(s22.length()-1))>0) {
+			if(s22.substring(s22.length()-1).compareTo(s33.substring(s33.length()-1))>0) {
+				return s33;
+			}
+			else {
+				return s22;
+			}
+		}
+		else {
+			if (s11.substring(s11.length()-1).compareTo(s33.substring(s33.length()-1))>1) {
+				return s33;
+			}
+			else {
+				return s11;
+			}
+		
 	}
 	
+		}
 	
 	// Return the sum of all numerical digits in the String
 	public static int numeralSum(String s) {
@@ -152,9 +264,12 @@ public class StringMethods {
 	// Return the number of words in String s that end with String substring
 	// You can assume there are no punctuation marks between words
 	public static int wordsEndsWithSubstring(String s, String substring) {
+		char[] a = s.toCharArray();
+		char[] b = substring.toCharArray();
 		
 		return 0;
-	}
+		
+}
 	
 
 	// Given String s, return the number of characters between the first occurrence
@@ -166,13 +281,9 @@ public class StringMethods {
 		int first = -1;
 		int last = -1;
 		int counter = 0;
-System.out.println(a.length);
-System.out.println(s);
+
 		for(int i = 0; i <a.length-b.length+1;i++) {
-			System.out.println(i);
-	System.out.println("era");
 			for(int c = 0; c < b.length; c++) {
-				System.out.println(c);
 				if(a[i+c]==b[c]) {
 					counter++;
 				}
@@ -192,10 +303,6 @@ System.out.println(s);
 				}
 			}
 		}
-		System.out.println(s);
-		System.out.println(substring);
-		System.out.println(first);
-		System.out.println(last);
 		return last-first;
 	}
 
